@@ -113,6 +113,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
+      - IEPL
+      - Ordinary
       - HK AUTO
       - SG AUTO
       - JP AUTO
@@ -120,9 +122,25 @@ proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    filter: (?i)IEPL
+    name: IEPL
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|IEPL
+    name: Ordinary
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
     name: AUTO
     type: url-test
     interval: 300
+    tolerance: 50
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
     name: AIGC
     type: select
@@ -134,6 +152,8 @@ proxy-groups:
     name: Telegram
     type: select
     proxies:
+      - IEPL
+      - Ordinary
       - HK AUTO
       - SG AUTO
       - JP AUTO
@@ -142,6 +162,8 @@ proxy-groups:
     name: YouTube
     type: select
     proxies:
+      - IEPL
+      - Ordinary
       - HK AUTO
       - SG AUTO
       - JP AUTO
@@ -150,6 +172,8 @@ proxy-groups:
     name: Google
     type: select
     proxies:
+      - IEPL
+      - Ordinary
       - HK AUTO
       - SG AUTO
       - JP AUTO
@@ -159,6 +183,8 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+      - IEPL
+      - Ordinary
       - HK AUTO
       - SG AUTO
       - JP AUTO
@@ -170,6 +196,7 @@ proxy-groups:
     name: HK AUTO
     type: url-test
     interval: 300
+    tolerance: 50
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
@@ -177,6 +204,7 @@ proxy-groups:
     name: SG AUTO
     type: url-test
     interval: 300
+    tolerance: 50
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
@@ -184,6 +212,7 @@ proxy-groups:
     name: JP AUTO
     type: url-test
     interval: 300
+    tolerance: 50
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
@@ -191,12 +220,15 @@ proxy-groups:
     name: US AUTO
     type: url-test
     interval: 300
+    tolerance: 50
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
     proxies:
       - PROXY
       - AUTO
+      - IEPL
+      - Ordinary
       - AIGC
       - Telegram
       - YouTube
