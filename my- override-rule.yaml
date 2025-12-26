@@ -1,13 +1,12 @@
 mixed-port: 7897
-external-controller: 127.0.0.1:9090
-# external-ui: ui  # 如需网页面板，请取消注释并将UI文件放入 ./ui 目录
+external-controller: 127.0.0.1:9099
 allow-lan: true
 mode: rule
 log-level: info
 unified-delay: true
 tcp-concurrent: true
 find-process-mode: strict
-global-client-fingerprint: chrome
+
 
 dns:
   enable: true
