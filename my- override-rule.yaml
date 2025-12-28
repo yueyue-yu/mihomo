@@ -7,7 +7,6 @@ unified-delay: true
 tcp-concurrent: true
 find-process-mode: strict
 
-
 dns:
   enable: true
   listen: "127.0.0.1:5335"
@@ -245,6 +244,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  gamedownload:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/25aba9901fa3f4dbdce0f0a338457bc4a9adaf5d/rule/Clash/Game/GameDownload/GameDownload.yaml
+    path: ./ruleset/gamedownload.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -384,6 +390,7 @@ proxy-groups:
 
 rules:
   - "RULE-SET,private,DIRECT"
+  - "RULE-SET,gamedownload,DIRECT"
   - "RULE-SET,bing,AIGC"
   - "RULE-SET,copilot,AIGC"
   - "RULE-SET,bard,AIGC"
