@@ -43,18 +43,23 @@ rule-providers:
     type: http
 
 proxy-groups:
-  - name: PROXY
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
+    name: PROXY
     type: select
     include-all: true
     proxies:
       - DIRECT
-  - name: YouTube
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/YouTube.png
+    name: YouTube
     type: select
+    include-all: true
     proxies:
       - PROXY
       - DIRECT
-  - name: Google & AI
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
+    name: Google & AI
     type: select
+    include-all: true
     proxies:
       - PROXY
       - DIRECT
