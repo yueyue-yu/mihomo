@@ -20,6 +20,27 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  youtube:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.yaml
+    path: ./ruleset/youtube.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  google:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.yaml
+    path: ./ruleset/google.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  category-ai-!cn:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.yaml
+    path: ./ruleset/category-ai-!cn.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
 
 proxy-groups:
   - name: PROXY
@@ -27,9 +48,22 @@ proxy-groups:
     include-all: true
     proxies:
       - DIRECT
+  - name: YouTube
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
+  - name: Google & AI
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
 
 rules:
   - "RULE-SET,private,DIRECT"
+  - "RULE-SET,youtube,YouTube"
+  - "RULE-SET,category-ai-!cn,Google & AI"
+  - "RULE-SET,google,Google & AI"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
   - "MATCH,PROXY"

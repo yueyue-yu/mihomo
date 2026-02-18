@@ -260,6 +260,7 @@ rules:
   - "RULE-SET,bard,AIGC"
   - "RULE-SET,openai,AIGC"
   - "RULE-SET,claude,AIGC"
+  - "DOMAIN-SUFFIX,steamserver.net,DIRECT"
   - "RULE-SET,steam,Steam"
   - "RULE-SET,telegram_domain,Telegram"
   - "RULE-SET,telegram_ip,Telegram"
