@@ -111,6 +111,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  category-ads-all:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.yaml
+    path: ./ruleset/category-ads-all.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -253,6 +260,7 @@ proxy-groups:
     type: select
 
 rules:
+  - "RULE-SET,category-ads-all,REJECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,gamedownload,DIRECT"
   - "RULE-SET,bing,AIGC"
