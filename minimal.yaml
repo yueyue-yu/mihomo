@@ -41,6 +41,20 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  telegram:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.yaml
+    path: ./ruleset/telegram.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  telegram_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.yaml
+    path: ./ruleset/telegram_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -63,12 +77,21 @@ proxy-groups:
     proxies:
       - PROXY
       - DIRECT
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
+    name: Telegram
+    type: select
+    include-all: true
+    proxies:
+      - PROXY
+      - DIRECT
 
 rules:
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,youtube,YouTube"
   - "RULE-SET,category-ai-!cn,Google & AI"
   - "RULE-SET,google,Google & AI"
+  - "RULE-SET,telegram,Telegram"
+  - "RULE-SET,telegram_ip,Telegram"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
   - "MATCH,PROXY"
