@@ -102,8 +102,6 @@ proxy-groups:
     type: select
     include-all: true
     exclude-filter: (?i)^oracle$
-    proxies:
-      - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/YouTube.png
     name: YouTube
     type: select
@@ -115,6 +113,8 @@ proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
     name: Google & AI
     type: select
+    proxies:
+      - PROXY
     use:
       - oracle
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
