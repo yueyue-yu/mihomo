@@ -88,7 +88,7 @@ proxy-providers:
   oracle:
     type: inline
     override:
-      dialer-proxy: Oracle Dialer
+      dialer-proxy: PROXY
     payload:
       - name: Oracle
         type: socks5
@@ -112,13 +112,6 @@ proxy-groups:
     proxies:
       - PROXY
       - DIRECT
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
-    name: Oracle Dialer
-    type: url-test
-    include-all: true
-    exclude-filter: (?i)^oracle$
-    interval: 300
-    tolerance: 50
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
     name: Google & AI
     type: select
