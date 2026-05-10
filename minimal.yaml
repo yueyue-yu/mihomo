@@ -84,7 +84,7 @@ dns:
     - https://223.6.6.6/dns-query
   respect-rules: true
 
-proxies:
+append-proxies:
   - name: 233boy-socks-161.153.73.161
     type: socks5
     server: 161.153.73.161
@@ -96,12 +96,14 @@ proxy-groups:
     name: PROXY
     type: select
     include-all: true
+    exclude-filter: ^233boy-socks-161\.153\.73\.161$
     proxies:
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/YouTube.png
     name: YouTube
     type: select
     include-all: true
+    exclude-filter: ^233boy-socks-161\.153\.73\.161$
     proxies:
       - PROXY
       - DIRECT
@@ -114,6 +116,7 @@ proxy-groups:
     name: Telegram
     type: select
     include-all: true
+    exclude-filter: ^233boy-socks-161\.153\.73\.161$
     proxies:
       - PROXY
       - DIRECT
