@@ -84,6 +84,13 @@ dns:
     - https://223.6.6.6/dns-query
   respect-rules: true
 
+proxies:
+  - name: 233boy-socks-161.153.73.161
+    type: socks5
+    server: 161.153.73.161
+    port: 12312
+    username: ejp6
+
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
     name: PROXY
@@ -101,10 +108,8 @@ proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
     name: Google & AI
     type: select
-    include-all: true
     proxies:
-      - PROXY
-      - DIRECT
+      - 233boy-socks-161.153.73.161
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
     name: Telegram
     type: select
