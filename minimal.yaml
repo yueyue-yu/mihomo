@@ -85,7 +85,7 @@ dns:
   respect-rules: true
 
 append-proxies:
-  - name: 233boy-socks-161.153.73.161
+  - name: Oracle
     type: socks5
     server: 161.153.73.161
     port: 12312
@@ -96,14 +96,14 @@ proxy-groups:
     name: PROXY
     type: select
     include-all: true
-    exclude-filter: ^233boy-socks-161\.153\.73\.161$
+    exclude-filter: ^Oracle$
     proxies:
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/YouTube.png
     name: YouTube
     type: select
     include-all: true
-    exclude-filter: ^233boy-socks-161\.153\.73\.161$
+    exclude-filter: ^Oracle$
     proxies:
       - PROXY
       - DIRECT
@@ -111,12 +111,12 @@ proxy-groups:
     name: Google & AI
     type: select
     proxies:
-      - 233boy-socks-161.153.73.161
+      - Oracle
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
     name: Telegram
     type: select
     include-all: true
-    exclude-filter: ^233boy-socks-161\.153\.73\.161$
+    exclude-filter: ^Oracle$
     proxies:
       - PROXY
       - DIRECT
