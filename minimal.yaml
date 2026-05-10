@@ -84,39 +84,44 @@ dns:
     - https://223.6.6.6/dns-query
   respect-rules: true
 
-append-proxies:
-  - name: Oracle
-    type: socks5
-    server: 161.153.73.161
-    port: 12312
-    username: ejp6
+proxy-providers:
+  oracle:
+    type: inline
+    override:
+      dialer-proxy: PROXY
+    payload:
+      - name: Oracle
+        type: socks5
+        server: 161.153.73.161
+        port: 12312
+        username: ejp6
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
     name: PROXY
     type: select
     include-all: true
-    exclude-filter: ^Oracle$
+    exclude-filter: (?i)^oracle$
     proxies:
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/YouTube.png
     name: YouTube
     type: select
     include-all: true
-    exclude-filter: ^Oracle$
+    exclude-filter: (?i)^oracle$
     proxies:
       - PROXY
       - DIRECT
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
     name: Google & AI
     type: select
-    proxies:
-      - Oracle
+    use:
+      - oracle
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
     name: Telegram
     type: select
     include-all: true
-    exclude-filter: ^Oracle$
+    exclude-filter: (?i)^oracle$
     proxies:
       - PROXY
       - DIRECT
